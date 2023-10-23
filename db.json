@@ -68,5 +68,22 @@
       "genderData": "",
       "id": 1
     }
+  ],
+  "password": [
+    {
+      "name": "Khushbooo",
+      "password": "kumari",
+      "id": 1
+    },
+    {
+      "name": "khushboo",
+      "password": "neha",
+      "id": 2
+    },
+    {
+      "name": "khushboo",
+      "password": "kumari",
+      "id": 3
+    }
   ]
 }

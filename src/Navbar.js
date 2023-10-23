@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Typography,Container, Button } from "@mui/material";
-import NextPage from "./Component/NextPage";
+// import NextPage from "./Component/NextPage";
 function Navbar() {
     return (
         <>
