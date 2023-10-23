@@ -1,0 +1,72 @@
+{
+  "Employee": [
+    {
+      "firstName": "dfd",
+      "lastName": "fd",
+      "gender": "df",
+      "attendance": "",
+      "date": "dfd",
+      "password": "df",
+      "id": 1
+    },
+    {
+      "firstName": "khushboo",
+      "lastName": "kumari",
+      "gender": "Male",
+      "attendance": "",
+      "date": "10-10-2023",
+      "password": "",
+      "id": 2
+    },
+    {
+      "firstName": "lina",
+      "lastName": "kumari",
+      "gender": "",
+      "attendance": "",
+      "date": "1-2-2023",
+      "password": "",
+      "genderData": "",
+      "id": 3
+    },
+    {
+      "firstName": "puja",
+      "lastName": "kumari",
+      "gender": "",
+      "attendance": "",
+      "date": "1-2-2020",
+      "password": "",
+      "genderData": "",
+      "id": 4
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "gender": "",
+      "attendance": "",
+      "date": "",
+      "password": "",
+      "genderData": "",
+      "id": 5
+    }
+  ],
+  "Attendance": [
+    {
+      "name": "",
+      "date": "",
+      "attendance": "",
+      "id": 1
+    }
+  ],
+  "AddUser": [
+    {
+      "firstName": "kfkjds",
+      "lastName": ",smndamd",
+      "gender": "",
+      "attendance": "dmns",
+      "date": "sd,ms",
+      "password": "sdm,s",
+      "genderData": "",
+      "id": 1
+    }
+  ]
+}
