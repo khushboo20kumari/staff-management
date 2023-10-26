@@ -1,7 +1,7 @@
-import { Button, CardContent, Grid, TextField, Typography, Card, Radio, Box } from '@mui/material';
+import { Button, TextField, Radio ,Card,Box,Grid,CardContent, Typography} from '@mui/material';
 import { useState } from 'react';
 
-function RegisterForm() {
+function Admin() {
 
     const [firstName, setFirstName] = useState('')
 
@@ -67,6 +67,7 @@ function RegisterForm() {
 
     }
 
+
     const HandlerSaveButton = (e) => {
 
         e.preventDefault()
@@ -87,16 +88,20 @@ function RegisterForm() {
         const data = { firstName, lastName, gender, attendance, date, password, genderData }
 
         fetch("http://localhost:3000/Employee", {
+
             method: "POST",
+
             headers: {
                 "content-Type": "application/json"
             },
+
             body: JSON.stringify(data)
         }).then((res) => {
             alert("succefully save data in json")
         })
-        // props.getSignup(data)
+
     }
+
 
     return (
         <>
@@ -126,41 +131,37 @@ function RegisterForm() {
                                 noValidate
                                 autoComplete="off"
                             >
+                             <Typography style={{fontSize:"30px",marginTop:"20px"}}>Add User Page</Typography>
 
 
-                                    <Typography>Register Form</Typography><br></br>
+                                <TextField id="outlined-basic" variant="outlined" label="First Name" onChange={HandlerFirstName} value={firstName}></TextField><br></br>
 
-                                    <TextField id="outlined-basic" variant="outlined" label="First Name" onChange={HandlerFirstName} value={firstName}></TextField><br></br>
+                                <TextField id="outlined-basic" label="Last Name" onChange={HandlerLastName} value={lastName}></TextField><br></br>
 
-                                    <TextField id="outlined-basic" label="Last Name" onChange={HandlerLastName} value={lastName}></TextField><br></br>
+                                <TextField id="outlined-basic" label="Mobail" onChange={handlerMobail} value={mobail}></TextField><br></br>
 
-                                    <TextField id="outlined-basic" label="Mobail" onChange={handlerMobail} value={mobail}></TextField><br></br>
-
-                                    <TextField id="outlined-basic" label="designation" onChange={HandelerDesignation} value={destination}></TextField><br></br>
+                                <TextField id="outlined-basic" label="designation" onChange={HandelerDesignation} value={destination}></TextField><br></br>
 
 
-                                    <TextField id="outlined-basic" label="Date" onChange={HandelrDate} value={date}></TextField><br></br>
-                                    <TextField id="outlined-basic" onChange={HandlerPassword} value={password}></TextField><br></br>
+                                <TextField id="outlined-basic" label="Date" onChange={HandelrDate} value={date}></TextField><br></br>
+                                <TextField id="outlined-basic" onChange={HandlerPassword} value={password}></TextField><br></br>
 
+                                <TextField id="outlined-basic" label="Attendance" onChange={HandlerAttendance} value={attendance}></TextField><br></br>
+                                <lebel>Male</lebel>
+                                <Radio onChange={HandlerGender} value={male}></Radio><br></br>
+                                <label >female</label>
+                                <Radio onChange={HandlerGender} value={female}></Radio><br></br>
+                                <label>other</label>
+                                <Radio onChange={HandlerGender} value={other}></Radio><br></br>
 
-                                    <TextField id="outlined-basic" variant="outlined" label="Attendance" onChange={HandlerAttendance} value={attendance}></TextField><br></br>
-                                    <lebel>Male</lebel>
-                                    <Radio onChange={HandlerGender} value={male}></Radio><br></br>
-                                    <label >female</label>
-                                    <Radio onChange={HandlerGender} value={female}></Radio><br></br>
-                                    <label>other</label>
-                                    <Radio onChange={HandlerGender} value={other}></Radio><br></br>
+                                <Button variant='contained' onClick={HandlerSaveButton}>Save</Button><br></br>
 
-                                    <Button variant='contained' onClick={HandlerSaveButton}>Add</Button><br></br>
-
-                                
 
                             </Box>
 
-
                             <Box style={{ background: "black", width: "50%" }}>
                                 <Card>
-                                    <img style={{ width: "100%", height: "700px" }} src="https://media.istockphoto.com/id/1320882544/photo/glowing-light-bulb-and-book-or-text-book-with-futuristic-icon-self-learning-or-education.jpg?s=2048x2048&w=is&k=20&c=KXVhc7o1iQ_NgS-JgNwcj0Nj2IBuLeACZUabEgHwkvI="></img>
+                                    <img style={{ width: "100%", height: "700px" }} src="https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?auto=format&fit=crop&q=80&w=1976&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
                                 </Card>
                             </Box>
 
@@ -169,12 +170,13 @@ function RegisterForm() {
                     </Grid>
 
                 </CardContent>
-            </Card >
+            </Card>
+
+
+
 
 
         </>
     )
 }
-
-export default RegisterForm;
-
+export default Admin;
