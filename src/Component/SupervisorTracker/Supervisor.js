@@ -1,14 +1,31 @@
 import {Card, TextField,CardContent,Grid,Button} from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import TableData from "./TableData";
 
 function Supervisor() {
 
     const [search, setSearch] = useState("")
 
+    const [userData,setUserData]=useState([])
+
     const HandlenChange = (e) => {
         setSearch(e.target.value)
     }
 
+    const fetchBar=()=>{
+        fetch("http://localhost:3000/Employee").then((res)=>{
+            return res.json()
+        }).then((res)=>{
+            setUserData(res)
+        })
+    }
+    
+    useEffect(()=>{
+        fetchBar()
+    },[])
+
+    
 
     return (
         <>
@@ -32,7 +49,7 @@ function Supervisor() {
                                 style={{backgroundColor:"white"}}
                                 onChange={HandlenChange}
                                 value={search}
-                                
+
                             />
 
                             <Button
@@ -54,6 +71,7 @@ function Supervisor() {
                     </Grid>
                 </CardContent>
             </Card>
+            <TableData userData={userData}/>
 
         </>
     )
