@@ -3,7 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Component/Login";
 import RegisterForm from "./Component/RegisterForm";
 // import  from "./Navbar";
-import Home from "./Component/Home"
+import Supervisor from "./Component/Supervisor";
+import Staff from "./Component/Staff";
+import MainComAdmin from "./Component/Admin/MainComAdmin";
 function App() {
 
   return (
@@ -12,8 +14,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login/>}>
-            <Route path="home" element={<Home />} />
-            <Route path="signup"  element={<RegisterForm/>}/>
+            <Route path="staff" element={<Staff/>} />   
+            <Route path="admin" element={<MainComAdmin/>}/>
+            <Route path="signin"  element={<RegisterForm/>}/>
+            <Route path="supervisor" element={<Supervisor/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
@@ -21,3 +25,4 @@ function App() {
   )
 }
 export default App;
+

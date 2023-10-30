@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { useState } from "react";
 
 import AddUser from "./AddUser"
-
+import Table from "./Table"
 // import Table from "./Table";
 
 function MainComAdmin() {
@@ -23,6 +23,7 @@ function MainComAdmin() {
             {showData ? <AddUser/> : false}
 
             <Button variant="contained" onClick={HandleAddUser}>AddUser</Button>
+            <Table/>
 
             {/* <Table/> */}
             

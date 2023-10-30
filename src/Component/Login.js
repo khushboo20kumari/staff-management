@@ -4,10 +4,9 @@ import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 import { AppBar, Container, Toolbar, Avatar, Typography ,TextField,Box} from "@mui/material";
 import { Outlet, Link } from "react-router-dom";
-// import Select from "@mui/material";
-// import MenuItem from "@mui/material";
+
 import { Select, MenuItem } from '@mui/material';
-// import { TextField, Box, Avatar } from "@mui/material";
+
 function Login() {
     return (
         <>
@@ -32,7 +31,7 @@ function Login() {
                         autoComplete="off"
                     >
 
-                        <Avatar style={{ marginTop: "20px" }} src="/broken-image.jpg" />
+                        <Avatar style={{ marginTop: "20px"}} src="/broken-image.jpg" />
 
                         <Typography variant="h5" style={{ fontSize: "20px", marginTop: "10px" }}>Login Account</Typography>
 
@@ -40,16 +39,18 @@ function Login() {
                             label="Name" ></TextField><br></br>
 
                         <Select value="" displayEmpty style={{ width: "65%" }}>
+
                             <MenuItem value=""></MenuItem>
-                            <MenuItem value={1}>Staff Page</MenuItem>
-                            <MenuItem value={2}>Admin Page</MenuItem>
-                            <MenuItem value={3}>Supervisor Page</MenuItem>
+                            <MenuItem value={1}><Link to="/staff">Staff Page</Link></MenuItem>
+                            <MenuItem value={2}><Link to="/admin">Admin Page</Link></MenuItem>
+                            <MenuItem value={3}><Link to="/supervisor">Supervisor Page</Link></MenuItem>
+
                         </Select><br></br>
 
 
                         <Button style={{ marginTop: "20px", width: "60%", borderRadius: "30px" }} variant="contained">Save</Button><br></br>
 
-                        <Button style={{ marginTop: "20px" }}>Sign in </Button><br></br>
+                        <Button style={{ marginTop: "20px" }}><Link to="/signin">Sign in </Link></Button><br></br>
 
 
                     </Box>
