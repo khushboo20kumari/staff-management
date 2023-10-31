@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-
+// import DeleteMethod from "./DeleteMethod";
 import { useState } from "react";
 
 import AddUser from "./AddUser"
@@ -24,6 +24,7 @@ function MainComAdmin() {
 
             <Button variant="contained" onClick={HandleAddUser}>AddUser</Button>
             <Table/>
+            {/* <DeleteMethod/> */}
 
             {/* <Table/> */}
             

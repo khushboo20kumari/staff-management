@@ -112,8 +112,19 @@ function Table() {
         fetchData()
     }, [])
 
+   
 
-    console.log(data, "kkkkkk")
+    const onDelete=(id)=>{
+        fetch(`http://localhost:3000/Employee/${id}`,{
+            method:"DELETE",
+        }).then((res)=>{
+            res.json().then((res)=>{
+                console.log(res)
+                fetchData()
+            })
+        })
+
+    }
 
 
     return (
@@ -144,7 +155,7 @@ function Table() {
                         <td>{item.date}</td>
                         <td>
                         <Button variant="contained">Update</Button>
-                        <Button variant="contained">Delete</Button>
+                        <Button variant="contained" onClick={()=>onDelete(item.id)}>Delete</Button>
                         </td>
 
                     </tr>
