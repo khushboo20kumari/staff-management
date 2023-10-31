@@ -1,5 +1,69 @@
 {
-  "Employee": [],
+  "Employee": [
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "gender": "Male",
+      "attendance": "Present",
+      "date": "10-10-2023",
+      "password": "securepassword",
+      "id": 1
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "gender": "Female",
+      "attendance": "Absent",
+      "date": "10-11-2023",
+      "password": "strongpassword",
+      "id": 2
+    },
+    {
+      "firstName": "Sarah",
+      "lastName": "Johnson",
+      "gender": "Female",
+      "attendance": "Present",
+      "date": "10-13-2023",
+      "password": "secretsauce",
+      "id": 4
+    },
+    {
+      "firstName": "khushboo",
+      "lastName": "Brown",
+      "gender": "Male",
+      "attendance": "Absent",
+      "date": "10-14-2023",
+      "password": "dbr0wn123",
+      "id": 5
+    },
+    {
+      "firstName": "Emily",
+      "lastName": "Davis",
+      "gender": "Female",
+      "attendance": "Present",
+      "date": "10-15-2023",
+      "password": "emily123",
+      "id": 6
+    },
+    {
+      "firstName": "Daniel",
+      "lastName": "Wilson",
+      "gender": "Male",
+      "attendance": "Present",
+      "date": "10-16-2023",
+      "password": "danielwilson",
+      "id": 7
+    },
+    {
+      "firstName": "Olivia",
+      "lastName": "Taylor",
+      "gender": "Female",
+      "attendance": "Absent",
+      "date": "10-16-2023",
+      "password": "danielwilson",
+      "id": 7
+    }
+  ],
   "Attendance": [
     {
       "name": "",
