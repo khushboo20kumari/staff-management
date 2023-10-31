@@ -24,17 +24,17 @@ function TableData({ userData }) {
                                 <Table>
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell>name</TableCell>
-                                            <TableCell>age</TableCell>
-                                            <TableCell>email</TableCell>
+                                            <TableCell style={{textAlign:"center"}}>name</TableCell>
+                                            <TableCell style={{textAlign:"center"}}>age</TableCell>
+                                            <TableCell style={{textAlign:"center"}}>email</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
                                         {userData.map((item) => (
                                             <TableRow>
-                                                <TableCell>{item.id}</TableCell>
-                                                <TableCell>{item.lastName}</TableCell>
-                                                <TableCell>{item.gender}</TableCell>
+                                                <TableCell style={{textAlign:"center"}}>{item.id}</TableCell>
+                                                <TableCell style={{textAlign:"center"}}>{item.lastName}</TableCell>
+                                                <TableCell style={{textAlign:"center"}}>{item.gender}</TableCell>
                                             </TableRow>
                                         ))}
                                     </TableBody>
