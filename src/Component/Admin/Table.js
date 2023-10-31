@@ -1,4 +1,4 @@
-import { Button, Card, TextField } from "@mui/material";
+import { Button, Card, TextField,Typography,Box} from "@mui/material";
 import { useEffect, useState } from "react";
 
 function Table() {
@@ -31,6 +31,9 @@ function Table() {
         })
 
     }
+    const onUpdate = () => {
+
+    }
 
 
     return (
@@ -38,30 +41,34 @@ function Table() {
 
         <>
 
-            <Card container justifyContent="center">
 
-                <CardContent>
+            <center>
 
-                    <Grid
-                        align="center"
-                        container
-                        direction="column"
-                        justify="center"
-                        spacing={0}
+                <Card sx={{ maxWidth: 345, height: "400px", marginTop: "100px" }}>
+                    <Typography style={{ marginTop: "40px" }}>Update</Typography>
+                    <Box
+                        component="form"
+                        sx={{
+                            '& .MuiTextField-root': { m: 2, width: '25ch' },
+                        }}
+                        noValidate
+                        autoComplete="off"
                     >
 
-                        <Grid>
-                           <TextField></TextField>
-                           <TextField></TextField>
-                           <TextField></TextField>
-                           <TextField></TextField>
-                           <TextField></TextField>
-                           <Button>Update</Button>
-                        </Grid>
-                    </Grid>
-                </CardContent>
-            </Card>
+                        <TextField></TextField><br></br>
+                        <TextField></TextField><br></br>
+                        <TextField></TextField><br></br>
+                        <TextField></TextField><br></br>
+                        <TextField></TextField><br></br>
+                        <Button>Update</Button><br></br>
 
+
+
+                    </Box>
+
+                </Card>
+
+            </center >
 
 
             <table border="1" className="table">
