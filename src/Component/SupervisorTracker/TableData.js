@@ -32,7 +32,7 @@ function TableData({ userData }) {
                                     <TableBody>
                                         {userData.map((item) => (
                                             <TableRow>
-                                                <TableCell>{item.firstName}</TableCell>
+                                                <TableCell>{item.id}</TableCell>
                                                 <TableCell>{item.lastName}</TableCell>
                                                 <TableCell>{item.gender}</TableCell>
                                             </TableRow>
@@ -40,37 +40,6 @@ function TableData({ userData }) {
                                     </TableBody>
                                 </Table>
                             </CardContent>
-
-                            {/* 
-                            <TableContainer>
-
-                                <Table>
-
-                                    <TableHead>
-
-                                        <TableRow >
-
-                                            <TableCell style={{ fontSize: "20px", textAlign: "center" }}>FirstName</TableCell>
-                                            <TableCell style={{ fontSize: "20px", textAlign: "center" }}>LastName</TableCell>
-                                            <TableCell style={{ fontSize: "20px", textAlign: "center" }}>Mobile</TableCell>
-
-                                        </TableRow>
-
-                                    </TableHead>
-
-                                    <TableBody>
-
-                                            <TableRow>
-
-                                                <TableCell style={{ fontSize: "12px", textAlign: "center" }}></TableCell>
-                                                <TableCell style={{ fontSize: "12px", textAlign: "center" }}></TableCell>
-                                                <TableCell style={{ fontSize: "12px", textAlign: "center" }}></TableCell>
-
-                                            </TableRow>
-
-                                    </TableBody>
-                                </Table>
-                            </TableContainer>  */}
                         </Grid>
                     </Grid>
                 </CardContent>
