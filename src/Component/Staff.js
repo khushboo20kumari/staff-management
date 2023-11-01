@@ -20,6 +20,7 @@ function Staff() {
     const HanldeAttendance = (e) => {
         setAttendance(e.target.value)
     }
+    const data={name,date,attendance}
 
     const HanldeSave = (e) => {
         e.preventDefault()
@@ -28,12 +29,13 @@ function Staff() {
             headers: {
                 "content-Type": "application/json"
             },
-            body: JSON.stringify({ name, date, attendance })
+            body: JSON.stringify(data)
         }).then((res) => {
             alert("succefully save data in json")
         })
 
     }
+    console.log(data,"khushboo")
 
 
     return (

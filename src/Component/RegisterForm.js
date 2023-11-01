@@ -1,4 +1,4 @@
-import { Button, CardContent, Grid, TextField, Typography, Card, Radio, Box } from '@mui/material';
+import { Button, TextField, Typography, Card, Radio, Box, Avatar } from '@mui/material';
 import { useState } from 'react';
 
 function RegisterForm() {
@@ -95,81 +95,126 @@ function RegisterForm() {
         }).then((res) => {
             alert("succefully save data in json")
         })
-        // props.getSignup(data)
+
     }
 
     return (
         <>
-            <Card container
-                justifyContent="center" style={{ backgroundColor: "#2A3132" }}>
 
-                <CardContent>
 
-                    <Grid
-
-                        align="center"
-                        container
-                        direction="column"
-                        justify="center"
-                        spacing={0}
-                        style={{ width: "100%" }}
-
+            <center>
+                {/* <Card sx={{ maxWidth: 345, marginTop: "100px" }}>
+                    <Box
+                        component="form"
+                        sx={{
+                            '& .MuiTextField-root': { m: 2, width: '25ch' },
+                        }}
+                        noValidate
+                        autoComplete="off"
                     >
 
-                        <Grid item style={{ display: "flex" }}>
-                            <Box style={{ background: "white", width: "50%" }}
+                        <Avatar style={{marginTop:"20px"}} src="/broken-image.jpg" />
 
-                                component="form"
-                                sx={{
-                                    '& .MuiTextField-root': { m: 1, width: '25ch' },
-                                }}
-                                noValidate
-                                autoComplete="off"
-                            >
+                        <Typography>Register Form</Typography><br></br>
 
+                        <TextField id="outlined-basic" variant="outlined" label="First Name" onChange={HandlerFirstName} value={firstName}></TextField><br></br>
 
-                                    <Typography>Register Form</Typography><br></br>
+                        <TextField id="outlined-basic" label="Last Name" onChange={HandlerLastName} value={lastName}></TextField><br></br>
 
-                                    <TextField id="outlined-basic" variant="outlined" label="First Name" onChange={HandlerFirstName} value={firstName}></TextField><br></br>
+                        <TextField id="outlined-basic" label="Mobail" onChange={handlerMobail} value={mobail}></TextField><br></br>
 
-                                    <TextField id="outlined-basic" label="Last Name" onChange={HandlerLastName} value={lastName}></TextField><br></br>
-
-                                    <TextField id="outlined-basic" label="Mobail" onChange={handlerMobail} value={mobail}></TextField><br></br>
-
-                                    <TextField id="outlined-basic" label="designation" onChange={HandelerDesignation} value={destination}></TextField><br></br>
+                        <TextField id="outlined-basic" label="designation" onChange={HandelerDesignation} value={destination}></TextField><br></br>
 
 
-                                    <TextField id="outlined-basic" label="Date" onChange={HandelrDate} value={date}></TextField><br></br>
-                                    <TextField id="outlined-basic" onChange={HandlerPassword} value={password}></TextField><br></br>
+                        <TextField id="outlined-basic" label="Date" onChange={HandelrDate} value={date}></TextField><br></br>
+                        <TextField id="outlined-basic" onChange={HandlerPassword} value={password}></TextField><br></br>
 
 
-                                    <TextField id="outlined-basic" variant="outlined" label="Attendance" onChange={HandlerAttendance} value={attendance}></TextField><br></br>
-                                    <lebel>Male</lebel>
-                                    <Radio onChange={HandlerGender} value={male}></Radio><br></br>
-                                    <label >female</label>
-                                    <Radio onChange={HandlerGender} value={female}></Radio><br></br>
-                                    <label>other</label>
-                                    <Radio onChange={HandlerGender} value={other}></Radio><br></br>
+                        <TextField id="outlined-basic" variant="outlined" label="Attendance" onChange={HandlerAttendance} value={attendance}></TextField><br></br>
+                        <lebel>Male</lebel>
+                        <Radio onChange={HandlerGender} value={male}></Radio><br></br>
+                        <label >female</label>
+                        <Radio onChange={HandlerGender} value={female}></Radio><br></br>
+                        <label>other</label>
+                        <Radio onChange={HandlerGender} value={other}></Radio><br></br>
 
-                                    <Button variant='contained' onClick={HandlerSaveButton}>Add</Button><br></br>
-
-                                
-
-                            </Box>
+                        <Button variant='contained' onClick={HandlerSaveButton}>Add</Button><br></br>
 
 
-                            <Box style={{ background: "black", width: "50%" }}>
-                                <Card>
-                                    <img style={{ width: "100%", height: "700px" }} src="https://media.istockphoto.com/id/1320882544/photo/glowing-light-bulb-and-book-or-text-book-with-futuristic-icon-self-learning-or-education.jpg?s=2048x2048&w=is&k=20&c=KXVhc7o1iQ_NgS-JgNwcj0Nj2IBuLeACZUabEgHwkvI="></img>
-                                </Card>
-                            </Box>
 
-                        </Grid>
 
-                    </Grid>
 
-                </CardContent>
-            </Card >
+                    </Box>
+
+                </Card>
+ */}
+
+
+                <Card sx={{ maxWidth: 600, marginTop: "100px", background: "#18224B", color: "white" }} className='signup'>
+                    <Avatar style={{ marginTop: "20px" }} src="/broken-image.jpg" />
+                    <Typography style={{ marginTop: "10px" }}>Register Form</Typography>
+                    <Box
+                        component="form"
+                        sx={{
+                            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    >
+                        <div>
+                            <TextField
+                                label="Standard warning"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                            />
+                            <TextField
+
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                            />
+
+                        </div>
+                        <div>
+                            <TextField
+
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                            />
+                            <TextField
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                            />
+                        </div>
+                        <div>
+
+                            <TextField
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                            />
+
+                            <TextField
+
+
+
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                            />
+                        </div>
+                        <Button style={{ width: "70%", borderRadius: "20px", marginTop: "30px" }} variant='contained'>Save</Button>
+                    </Box>
+                </Card>
+            </center >
 
 
         </>

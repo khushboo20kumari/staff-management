@@ -37,24 +37,6 @@
       "id": 5
     },
     {
-      "firstName": "Emily",
-      "lastName": "Davis",
-      "gender": "Female",
-      "attendance": "Present",
-      "date": "10-15-2023",
-      "password": "emily123",
-      "id": 6
-    },
-    {
-      "firstName": "Daniel",
-      "lastName": "Wilson",
-      "gender": "Male",
-      "attendance": "Present",
-      "date": "10-16-2023",
-      "password": "danielwilson",
-      "id": 7
-    },
-    {
       "firstName": "Olivia",
       "lastName": "Taylor",
       "gender": "Female",

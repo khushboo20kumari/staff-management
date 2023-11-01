@@ -2,7 +2,7 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
-import { AppBar, Container, Toolbar, Avatar, Typography ,TextField,Box} from "@mui/material";
+import { AppBar, Container, Toolbar, Avatar, Typography, TextField, Box } from "@mui/material";
 import { Outlet, Link } from "react-router-dom";
 
 import { Select, MenuItem } from '@mui/material';
@@ -10,7 +10,17 @@ import { Select, MenuItem } from '@mui/material';
 function Login() {
     return (
         <>
+
+
             <Container>
+                <AppBar>
+                    <Toolbar>
+                        <Typography style={{ flexGrow: "1" }}>Degital Staff Manegment Sytem</Typography>
+                        <Avatar alt="Cindy Baker" src="https://media.istockphoto.com/id/1320882544/photo/glowing-light-bulb-and-book-or-text-book-with-futuristic-icon-self-learning-or-education.jpg?s=2048x2048&w=is&k=20&c=KXVhc7o1iQ_NgS-JgNwcj0Nj2IBuLeACZUabEgHwkvI=" />
+                    </Toolbar>
+                </AppBar >
+            </Container>
+            {/* <Container>
                 <AppBar>
                     <Toolbar>
                         <Typography style={{ flexGrow: "1" }}>Degital Staff Manegment Sytem</Typography>
@@ -31,7 +41,7 @@ function Login() {
                         autoComplete="off"
                     >
 
-                        <Avatar style={{ marginTop: "20px"}} src="/broken-image.jpg" />
+                        <Avatar style={{ marginTop: "20px" }} src="/broken-image.jpg" />
 
                         <Typography variant="h5" style={{ fontSize: "20px", marginTop: "10px" }}>Login Account</Typography>
 
@@ -58,7 +68,56 @@ function Login() {
                 </Card>
 
             </center>
-            <Outlet/>
+            <Outlet /> */}
+
+
+            <center>
+                <Card sx={{ maxWidth: 340, marginTop: "100px", background: "#18224B", color: "white", height: "450px" ,borderRadius:"20px"}} className='signup'>
+                    <Avatar style={{ marginTop: "20px" }} src="/broken-image.jpg" />
+                    <Typography style={{ marginTop: "10px" }}>Login Form</Typography>
+                    <Box
+                        component="form"
+                        sx={{
+                            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    >
+                        <div>
+                            <TextField
+                                label="Standard warning"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                            />
+                            <TextField
+
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                            />
+                        </div>
+
+                        <Select value="" displayEmpty style={{ width: "75%", marginTop: "20px" }} color="secondary"
+                            focused>
+
+                            <MenuItem value=""></MenuItem>
+                            <MenuItem value={1}><Link to="/staff">Staff Page</Link></MenuItem>
+                            <MenuItem value={2}><Link to="/admin">Admin Page</Link></MenuItem>
+                            <MenuItem value={3}><Link to="/supervisor">Supervisor Page</Link></MenuItem>
+
+                        </Select><br></br>
+
+
+                        <Button style={{ width: "70%", borderRadius: "20px", marginTop: "30px" }} variant='contained'>Save</Button><br></br>
+
+                        <Button style={{ marginTop: "20px" }}><Link to="/signin" style={{color:"white"}}>Sign in </Link></Button><br></br>
+
+                    </Box>
+                </Card>
+            </center >
+        <Outlet />
 
         </>
     )
