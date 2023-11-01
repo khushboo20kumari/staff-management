@@ -1,5 +1,5 @@
-import { Button } from "@mui/base";
-import { TextField, Card, Box, Typography } from "@mui/material";
+// import { Button } from "@mui/base";
+import { TextField, Card, Box, Typography ,Avatar,Button} from "@mui/material";
 import { useState } from "react";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -16,11 +16,11 @@ function Staff() {
 
     }
 
-    
+
     const HanldeAttendance = (e) => {
         setAttendance(e.target.value)
     }
-    const data={name,date,attendance}
+    const data = { name, date, attendance }
 
     const HanldeSave = (e) => {
         e.preventDefault()
@@ -35,14 +35,14 @@ function Staff() {
         })
 
     }
-    console.log(data,"khushboo")
+    console.log(data, "khushboo")
 
 
     return (
         <>
             <center>
 
-                <Card sx={{ maxWidth: 345, height: "400px", marginTop: "100px" }}>
+                {/* <Card sx={{ maxWidth: 345, height: "400px", marginTop: "100px" }}>
                     <Typography style={{marginTop:"40px"}}>Staff Page</Typography>
                     <Box
                         component="form"
@@ -65,6 +65,47 @@ function Staff() {
 
                     </Box>
 
+                </Card> */}
+
+                <Card sx={{ maxWidth: 340, marginTop: "100px", background: "#18224B", color: "white", height: "400px", borderRadius: "20px" }} className='signup'>
+                    <Avatar style={{ marginTop: "20px" }} src="/broken-image.jpg" />
+                    <Typography style={{ marginTop: "10px" }}>Staff Page</Typography>
+                    <Box
+                        component="form"
+                        sx={{
+                            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    >
+                        <div>
+                            <TextField
+                                label="Standard warning"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                                onClick={HandelName}
+                            />
+                            <TextField
+
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                                onClick={HanldeAttendance}
+                            />
+
+                        </div>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <DatePicker />
+                        </LocalizationProvider>
+
+
+
+                        <Button style={{ width: "70%", borderRadius: "20px", marginTop: "30px" }} variant='contained'>Save</Button><br></br>
+
+
+                    </Box>
                 </Card>
 
             </center >

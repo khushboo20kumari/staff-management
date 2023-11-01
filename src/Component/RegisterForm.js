@@ -1,4 +1,4 @@
-import { Button, TextField, Typography, Card, Radio, Box, Avatar } from '@mui/material';
+import { Button, TextField, Typography, Card,Box, Avatar } from '@mui/material';
 import { useState } from 'react';
 
 function RegisterForm() {
@@ -59,14 +59,7 @@ function RegisterForm() {
         setAttendance(e.target.value)
     }
 
-    const HandlerGender = (e) => {
-
-        setFemale(e.target.value)
-        setMale(e.target.value)
-        setOther(e.target.value)
-
-    }
-
+    
     const HandlerSaveButton = (e) => {
 
         e.preventDefault()
@@ -167,6 +160,7 @@ function RegisterForm() {
                                 variant="standard"
                                 color="secondary"
                                 focused
+                                onChange={HandlerFirstName} value={firstName}
                             />
                             <TextField
 
@@ -174,6 +168,7 @@ function RegisterForm() {
                                 variant="standard"
                                 color="secondary"
                                 focused
+                                onChange={HandlerLastName} value={lastName}
                             />
 
                         </div>
@@ -184,12 +179,25 @@ function RegisterForm() {
                                 variant="standard"
                                 color="secondary"
                                 focused
+                                onChange={HandlerAttendance} value={attendance}
+                            />
+
+                        </div>
+                        <div>
+                            <TextField
+
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                                onChange={handlerMobail} value={mobail}
                             />
                             <TextField
                                 label="LastName"
                                 variant="standard"
                                 color="secondary"
                                 focused
+                                onChange={HandelerDesignation} value={destination}
                             />
                         </div>
                         <div>
@@ -199,6 +207,7 @@ function RegisterForm() {
                                 variant="standard"
                                 color="secondary"
                                 focused
+                                onChange={HandelrDate} value={date}
                             />
 
                             <TextField
@@ -209,9 +218,11 @@ function RegisterForm() {
                                 variant="standard"
                                 color="secondary"
                                 focused
+                                onChange={HandlerPassword} value={password}
                             />
+
                         </div>
-                        <Button style={{ width: "70%", borderRadius: "20px", marginTop: "30px" }} variant='contained'>Save</Button>
+                        <Button style={{ width: "70%", borderRadius: "20px", marginTop: "30px" }} variant='contained' onClick={HandlerSaveButton}>Save</Button>
                     </Box>
                 </Card>
             </center >

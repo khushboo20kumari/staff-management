@@ -3,12 +3,12 @@ import { Button } from "@mui/material";
 import { useState } from "react";
 
 import AddUser from "./AddUser"
-import Table from "./Table"
+import TableData from "./TableData"
 // import Table from "./Table";
 
 function MainComAdmin() {
 
-    const [showData,setShowData]=useState(false)
+    const [showData, setShowData] = useState(false)
 
 
     const HandleAddUser = () => {
@@ -20,14 +20,15 @@ function MainComAdmin() {
 
     return (
         <>
-            {showData ? <AddUser/> : false}
-
-            <Button variant="contained" onClick={HandleAddUser}>AddUser</Button>
-            <Table/>
+            {showData ? <AddUser /> : false}
+            <center>
+                <Button variant="contained"  style={{marginTop:"30px"}} onClick={HandleAddUser}>AddUser</Button>
+            </center>
+            <TableData />
             {/* <DeleteMethod/> */}
 
             {/* <Table/> */}
-            
+
         </>
     )
 }

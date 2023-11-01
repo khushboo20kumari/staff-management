@@ -59,16 +59,15 @@ function Supervisor() {
                     >
                         <Grid item>
 
-                            <TextField
-                                required
-                                id="outlined-error"
-                                label="Search bar....."
-
-
-                                style={{ backgroundColor: "white" }}
+                            
+                             <TextField
+                                label="Standard warning"
+                                variant="standard"
+                                color="success"
+                                focused
                                 onChange={HandlenChange}
                                 value={search}
-
+                                // onChange={HandlerFirstName} value={firstName}
                             />
 
                             <Button
