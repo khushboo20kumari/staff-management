@@ -1,4 +1,4 @@
-import { Button, TextField, Radio ,Card,Box,Grid,CardContent, Typography} from '@mui/material';
+import { Button, TextField, Radio, Card, Box, Grid, CardContent, Typography,Avatar} from '@mui/material';
 import { useState } from 'react';
 
 function Admin() {
@@ -105,7 +105,7 @@ function Admin() {
 
     return (
         <>
-            <Card container
+            {/* <Card container
                 justifyContent="center" style={{ backgroundColor: "#2A3132" }}>
 
                 <CardContent>
@@ -131,7 +131,7 @@ function Admin() {
                                 noValidate
                                 autoComplete="off"
                             >
-                             <Typography style={{fontSize:"30px",marginTop:"20px"}}>Add User Page</Typography>
+                                <Typography style={{ fontSize: "30px", marginTop: "20px" }}>Add User Page</Typography>
 
 
                                 <TextField id="outlined-basic" variant="outlined" label="First Name" onChange={HandlerFirstName} value={firstName}></TextField><br></br>
@@ -171,6 +171,91 @@ function Admin() {
 
                 </CardContent>
             </Card>
+ */}
+            <center>
+                <Card sx={{ maxWidth: 300, marginTop: "100px", background: "#18224B", color: "white" }} className='signup'>
+                    <Avatar style={{ marginTop: "20px" }} src="/broken-image.jpg" />
+                    <Typography style={{ marginTop: "10px" }}>Add User</Typography>
+                    <Box
+                        component="form"
+                        sx={{
+                            '& .MuiTextField-root': { m: 1, width: '25ch' },
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    >
+                        <div>
+                            <TextField
+                                label="Standard warning"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                                onChange={HandlerFirstName} value={firstName}
+                            />
+                            <TextField
+
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                                onChange={HandlerLastName} value={lastName}
+                            />
+
+                        </div>
+                        <div>
+                            <TextField
+
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                                onChange={HandlerAttendance} value={attendance}
+                            />
+
+                        </div>
+                        <div>
+                            <TextField
+
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                                onChange={handlerMobail} value={mobail}
+                            />
+                            <TextField
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                                onChange={HandelerDesignation} value={destination}
+                            />
+                        </div>
+                        <div>
+
+                            <TextField
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                                onChange={HandelrDate} value={date}
+                            />
+
+                            <TextField
+
+
+
+                                label="LastName"
+                                variant="standard"
+                                color="secondary"
+                                focused
+                                onChange={HandlerPassword} value={password}
+                            />
+
+                        </div>
+                        <Button style={{ width: "70%", borderRadius: "20px", marginTop: "30px" }} variant='contained' onClick={HandlerSaveButton}>Save</Button>
+                    </Box>
+                </Card>
+            </center >
 
 
 
