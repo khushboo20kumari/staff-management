@@ -1,28 +1,33 @@
 import "./App.css"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Component/Login";
 import RegisterForm from "./Component/RegisterForm";
-// import  from "./Navbar";
 import Supervisor from "./Component/SupervisorTracker/Supervisor";
 import Staff from "./Component/Staff";
 import MainComAdmin from "./Component/Admin/MainComAdmin";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; 
+
 function App() {
 
   return (
 
     <div className="App">
-      <BrowserRouter>
+      <Router>
         <Routes>
-          <Route path="/" element={<Login/>}>
-            <Route path="staff" element={<Staff/>} />   
-            <Route path="admin" element={<MainComAdmin/>}/>
-            <Route path="signin"  element={<RegisterForm/>}/>
-            <Route path="supervisor" element={<Supervisor/>}/>
+          <Route path="/" element={<Login />}>
+            <Route path="/staff" element={<Staff />} />
+            <Route path="/admin" element={<MainComAdmin />} />
+            <Route path="/signin" element={<RegisterForm />} />
+            <Route path="/supervisor" element={<Supervisor />} />
+
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
+
+
+
+
+
     </div>
   )
 }
 export default App;
-

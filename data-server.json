@@ -7,6 +7,7 @@
       "attendance": "Present",
       "date": "10-10-2023",
       "password": "securepassword",
+      "designation": "Staff",
       "id": 1
     },
     {
@@ -16,6 +17,7 @@
       "attendance": "Absent",
       "date": "10-11-2023",
       "password": "strongpassword",
+      "designation": "Supervisor",
       "id": 2
     },
     {
@@ -25,6 +27,7 @@
       "attendance": "Present",
       "date": "10-13-2023",
       "password": "secretsauce",
+      "designation": "admin",
       "id": 4
     },
     {
@@ -34,16 +37,8 @@
       "attendance": "Absent",
       "date": "10-14-2023",
       "password": "dbr0wn123",
+      "designation": "Staff",
       "id": 5
-    },
-    {
-      "firstName": "Olivia",
-      "lastName": "Taylor",
-      "gender": "Female",
-      "attendance": "Absent",
-      "date": "10-16-2023",
-      "password": "danielwilson",
-      "id": 7
     }
   ],
   "Attendance": [
