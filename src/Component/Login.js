@@ -36,27 +36,6 @@ function Login() {
         fetchData()
 
     }, [])
-
-
-
-    // var HandlerHome = () => {
-
-
-    //     neviget("/staff")
-    // }
-
-    // const HandlerAbmin = () => {
-    //     neviget("/admin")
-    // }
-
-    // const HandleSupervisor = () => {
-    //     neviget("/supervisor")
-    // }
-
-    // const HanderSigin = () => {
-    //     neviget("/signin")
-    // }
-
     const onChangeHandler = (e) => {
         setItem(e.target.value)
     }
@@ -66,17 +45,29 @@ function Login() {
             return user.designation.toLowerCase() === item.toLowerCase();
         });
         console.log(filterData, "data")
+
         setFilterItem(filterData);
 
         if (filterItem.length > 0) {
 
             let destination = filterItem[0].designation;
+
             if (destination.toLowerCase() === "staff") {
                 neviget("/staff");
             }
-            
+            else if (destination.toLowerCase()==="admin"){
+                neviget("/admin")
+            }
+            else{
+                neviget("/supervisor")
+            }
+
+
         }
 
+    }
+    const HandleSignin=()=>{
+        neviget("/signin")
     }
     return (
         <>
@@ -127,16 +118,14 @@ function Login() {
                             <MenuItem value="Staff">Staff</MenuItem>
                             <MenuItem value="admin">Admin Page</MenuItem>
                             <MenuItem value="Supervisor">Supervisor Page</MenuItem>
-                            <MenuItem value="">
-                                item
-                            </MenuItem>
+                            <MenuItem value=""> </MenuItem>
 
                         </Select><br></br>
 
 
                         <Button style={{ width: "70%", borderRadius: "20px", marginTop: "30px" }} variant='contained' onClick={HandleClick}>Save</Button><br></br>
 
-                        <Button style={{ marginTop: "20px" }}>Sign in</Button><br></br>
+                        <Button style={{ marginTop: "20px" }} onClick={HandleSignin}>Sign in</Button><br></br>
 
                     </Box>
                 </Card>

@@ -29,24 +29,32 @@
       "password": "secretsauce",
       "designation": "admin",
       "id": 4
-    },
-    {
-      "firstName": "khushboo",
-      "lastName": "Brown",
-      "gender": "Male",
-      "attendance": "Absent",
-      "date": "10-14-2023",
-      "password": "dbr0wn123",
-      "designation": "Staff",
-      "id": 5
     }
   ],
   "Attendance": [
     {
-      "name": "",
+      "name": "John Doe",
+      "date": "2023-11-02",
+      "attendance": "Present",
+      "id": 1
+    },
+    {
+      "name": "Jane Smith",
+      "date": "2023-11-02",
+      "attendance": "Absent",
+      "id": 2
+    },
+    {
+      "name": "Bob Johnson",
+      "date": "2023-11-02",
+      "attendance": "Present",
+      "id": 3
+    },
+    {
+      "name": "khushboo",
       "date": "",
       "attendance": "",
-      "id": 1
+      "id": 4
     }
   ],
   "AddUser": [

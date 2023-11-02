@@ -1,5 +1,5 @@
 // import { Button } from "@mui/base";
-import { TextField, Card, Box, Typography ,Avatar,Button} from "@mui/material";
+import { TextField, Card, Box, Typography, Avatar, Button } from "@mui/material";
 import { useState } from "react";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -10,21 +10,35 @@ function Staff() {
     const [name, setName] = useState('')
     const [date, setDate] = useState('')
     const [attendance, setAttendance] = useState('')
+    // const [item, setItem] = useState([])
 
     const HandelName = (e) => {
         setName(e.target.value)
 
     }
 
+    const onChangeName = (e) => {
+        setName(e.target.value)
+    }
 
-    const HanldeAttendance = (e) => {
+
+    const OnChangeDate = (e) => {
+        setDate(e.target.value)
+    }
+
+    const onChangeAttendenc = (e) => {
         setAttendance(e.target.value)
     }
-    const data = { name, date, attendance }
 
-    const HanldeSave = (e) => {
-        e.preventDefault()
-        fetch(" http://localhost:3004/Attendance", {
+
+
+    const HandleClick = () => {
+        setAttendance("")
+        setDate("")
+        setName("")
+        const data = { name, date, attendance }
+
+        fetch("http://localhost:3000/Attendance", {
             method: "POST",
             headers: {
                 "content-Type": "application/json"
@@ -34,39 +48,13 @@ function Staff() {
             alert("succefully save data in json")
         })
 
+        console.log(data, "dataaaa")
     }
-    console.log(data, "khushboo")
 
 
     return (
         <>
             <center>
-
-                {/* <Card sx={{ maxWidth: 345, height: "400px", marginTop: "100px" }}>
-                    <Typography style={{marginTop:"40px"}}>Staff Page</Typography>
-                    <Box
-                        component="form"
-                        sx={{
-                            '& .MuiTextField-root': { m: 2, width: '25ch' },
-                        }}
-                        noValidate
-                        autoComplete="off"
-                    >
-
-                        <TextField label="name" onClick={HandelName}></TextField><br></br>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DatePicker />
-                        </LocalizationProvider>
-
-                        <TextField label="Attendance" onClick={HanldeAttendance}></TextField><br></br>
-                        <Button onClick={HanldeSave} variant="contained">Save</Button><br></br>
-                        
-
-
-                    </Box>
-
-                </Card> */}
-
                 <Card sx={{ maxWidth: 340, marginTop: "100px", background: "#18224B", color: "white", height: "400px", borderRadius: "20px" }} className='signup'>
                     <Avatar style={{ marginTop: "20px" }} src="/broken-image.jpg" />
                     <Typography style={{ marginTop: "10px" }}>Staff Page</Typography>
@@ -84,7 +72,9 @@ function Staff() {
                                 variant="standard"
                                 color="secondary"
                                 focused
-                                onClick={HandelName}
+
+                                onChange={onChangeName}
+
                             />
                             <TextField
 
@@ -92,17 +82,18 @@ function Staff() {
                                 variant="standard"
                                 color="secondary"
                                 focused
-                                onClick={HanldeAttendance}
+                                onClick={OnChangeDate}
+
                             />
 
                         </div>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <LocalizationProvider dateAdapter={AdapterDayjs} onChange={onChangeAttendenc}>
                             <DatePicker />
                         </LocalizationProvider>
 
 
 
-                        <Button style={{ width: "70%", borderRadius: "20px", marginTop: "30px" }} variant='contained'>Save</Button><br></br>
+                        <Button style={{ width: "70%", borderRadius: "20px", marginTop: "30px" }} variant='contained' onClick={HandleClick}>Save</Button><br></br>
 
 
                     </Box>
