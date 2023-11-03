@@ -10,6 +10,7 @@ import { Select, MenuItem } from '@mui/material';
 function Login() {
 
     const [data, setData] = useState([])
+    const [nameErro,setNameErro]=useState(false)
 
 
     const [item, setItem] = useState("")
@@ -55,10 +56,10 @@ function Login() {
             if (destination.toLowerCase() === "staff") {
                 neviget("/staff");
             }
-            else if (destination.toLowerCase()==="admin"){
+            else if (destination.toLowerCase() === "admin") {
                 neviget("/admin")
             }
-            else{
+            else {
                 neviget("/supervisor")
             }
 
@@ -66,7 +67,7 @@ function Login() {
         }
 
     }
-    const HandleSignin=()=>{
+    const HandleSignin = () => {
         neviget("/signin")
     }
     return (

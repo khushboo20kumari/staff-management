@@ -29,6 +29,71 @@
       "password": "secretsauce",
       "designation": "admin",
       "id": 4
+    },
+    {
+      "firstName": "diya",
+      "lastName": "kumari",
+      "gender": "",
+      "attendance": "parent",
+      "date": "1-2-2020",
+      "password": "diya@123",
+      "genderData": "",
+      "id": 5
+    },
+    {
+      "firstName": "puja12",
+      "lastName": "sharam",
+      "gender": "",
+      "attendance": "parsent",
+      "date": "1-2-3030",
+      "password": "khushboo@123",
+      "genderData": "",
+      "mobail": "83232093",
+      "id": 6
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "gender": "",
+      "attendance": false,
+      "date": "",
+      "password": "",
+      "genderData": "",
+      "mobail": "34",
+      "id": 7
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "gender": "",
+      "attendance": "",
+      "date": "",
+      "password": "Khushboo",
+      "genderData": "",
+      "mobail": "",
+      "id": 8
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "gender": "",
+      "attendance": "",
+      "date": "",
+      "password": "khdfhdfh",
+      "genderData": "",
+      "mobail": "",
+      "id": 9
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "gender": "",
+      "attendance": "",
+      "date": "",
+      "password": "khHu12333333",
+      "genderData": "",
+      "mobail": "",
+      "id": 10
     }
   ],
   "Attendance": [

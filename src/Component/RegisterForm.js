@@ -1,4 +1,4 @@
-import { Button, TextField, Typography, Card,Box, Avatar } from '@mui/material';
+import { Button, TextField, Typography, Card, Box, Avatar } from '@mui/material';
 import { useState } from 'react';
 
 function RegisterForm() {
@@ -25,7 +25,8 @@ function RegisterForm() {
 
     const [other, setOther] = useState('')
 
-
+    const [mobailnumErro, setMobailnumErro] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("");
 
     const HandlerFirstName = (e) => {
         setFirstName(e.target.value)
@@ -45,21 +46,43 @@ function RegisterForm() {
 
     }
 
-
-
     const handlerMobail = (e) => {
         setMobail(e.target.value)
+
+        if (mobail.length > 10) {
+            setMobailnumErro(true)
+            alert("Phone Number should be 10 digit")
+
+        }
+        else {
+            setMobailnumErro(false)
+        }
+
     }
 
     const HandlerPassword = (e) => {
         setPassword(e.target.value)
+        var lowerCase = /[a-z]/g;
+        var upperCase = /[A-Z]/g;
+        var numbers = /[0-9]/g;
+        
+        if (!password.match(lowerCase)){
+            setErrorMessage("Password should contains lowercase letters!")
+        }
+        else if (!password.match(upperCase)){
+            setErrorMessage("Password should contain uppercase letters!")
+        }
+        else if (!password.match(numbers)){
+            setErrorMessage("Password should contains numbers also!")
+        }else if (password<10){
+            setMobailnumErro("Password length should be more than 10.")
+        }else{
+            setMobailnumErro("Password is strong!")
+        }
     }
-
     const HandlerAttendance = (e) => {
         setAttendance(e.target.value)
     }
-
-    
     const HandlerSaveButton = (e) => {
 
         e.preventDefault()
@@ -77,7 +100,7 @@ function RegisterForm() {
 
         const genderData = male || female || other
 
-        const data = { firstName, lastName, gender, attendance, date, password, genderData }
+        const data = { firstName, lastName, gender, attendance, date, password, genderData, mobail }
 
         fetch("http://localhost:3000/Employee", {
             method: "POST",
@@ -96,53 +119,6 @@ function RegisterForm() {
 
 
             <center>
-                {/* <Card sx={{ maxWidth: 345, marginTop: "100px" }}>
-                    <Box
-                        component="form"
-                        sx={{
-                            '& .MuiTextField-root': { m: 2, width: '25ch' },
-                        }}
-                        noValidate
-                        autoComplete="off"
-                    >
-
-                        <Avatar style={{marginTop:"20px"}} src="/broken-image.jpg" />
-
-                        <Typography>Register Form</Typography><br></br>
-
-                        <TextField id="outlined-basic" variant="outlined" label="First Name" onChange={HandlerFirstName} value={firstName}></TextField><br></br>
-
-                        <TextField id="outlined-basic" label="Last Name" onChange={HandlerLastName} value={lastName}></TextField><br></br>
-
-                        <TextField id="outlined-basic" label="Mobail" onChange={handlerMobail} value={mobail}></TextField><br></br>
-
-                        <TextField id="outlined-basic" label="designation" onChange={HandelerDesignation} value={destination}></TextField><br></br>
-
-
-                        <TextField id="outlined-basic" label="Date" onChange={HandelrDate} value={date}></TextField><br></br>
-                        <TextField id="outlined-basic" onChange={HandlerPassword} value={password}></TextField><br></br>
-
-
-                        <TextField id="outlined-basic" variant="outlined" label="Attendance" onChange={HandlerAttendance} value={attendance}></TextField><br></br>
-                        <lebel>Male</lebel>
-                        <Radio onChange={HandlerGender} value={male}></Radio><br></br>
-                        <label >female</label>
-                        <Radio onChange={HandlerGender} value={female}></Radio><br></br>
-                        <label>other</label>
-                        <Radio onChange={HandlerGender} value={other}></Radio><br></br>
-
-                        <Button variant='contained' onClick={HandlerSaveButton}>Add</Button><br></br>
-
-
-
-
-
-                    </Box>
-
-                </Card>
- */}
-
-
                 <Card sx={{ maxWidth: 600, marginTop: "100px", background: "#18224B", color: "white" }} className='signup'>
                     <Avatar style={{ marginTop: "20px" }} src="/broken-image.jpg" />
                     <Typography style={{ marginTop: "10px" }}>Register Form</Typography>
@@ -156,7 +132,7 @@ function RegisterForm() {
                     >
                         <div>
                             <TextField
-                                label="Standard warning"
+                                label="FirstName"
                                 variant="standard"
                                 color="secondary"
                                 focused
@@ -175,7 +151,7 @@ function RegisterForm() {
                         <div>
                             <TextField
 
-                                label="LastName"
+                                label="attendance"
                                 variant="standard"
                                 color="secondary"
                                 focused
@@ -186,24 +162,25 @@ function RegisterForm() {
                         <div>
                             <TextField
 
-                                label="LastName"
+                                label="Mobail"
                                 variant="standard"
                                 color="secondary"
                                 focused
                                 onChange={handlerMobail} value={mobail}
                             />
                             <TextField
-                                label="LastName"
+                                label="destination"
                                 variant="standard"
                                 color="secondary"
                                 focused
                                 onChange={HandelerDesignation} value={destination}
                             />
+
                         </div>
                         <div>
 
                             <TextField
-                                label="LastName"
+                                label="Date"
                                 variant="standard"
                                 color="secondary"
                                 focused
@@ -214,12 +191,13 @@ function RegisterForm() {
 
 
 
-                                label="LastName"
+                                label="Password"
                                 variant="standard"
                                 color="secondary"
                                 focused
                                 onChange={HandlerPassword} value={password}
                             />
+                            <p style = {{ color: "red" }}>{errorMessage}</p>
 
                         </div>
                         <Button style={{ width: "70%", borderRadius: "20px", marginTop: "30px" }} variant='contained' onClick={HandlerSaveButton}>Save</Button>

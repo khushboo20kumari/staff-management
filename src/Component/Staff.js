@@ -10,12 +10,8 @@ function Staff() {
     const [name, setName] = useState('')
     const [date, setDate] = useState('')
     const [attendance, setAttendance] = useState('')
-    // const [item, setItem] = useState([])
+    
 
-    const HandelName = (e) => {
-        setName(e.target.value)
-
-    }
 
     const onChangeName = (e) => {
         setName(e.target.value)
